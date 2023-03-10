@@ -9,11 +9,11 @@ class MultidrawConan(ConanFile):
     generators = "cmake"
     
     # Optional metadata
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Multidraw here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
+    license = "MIT"
+    author = "Terry Lorber terry@metatooth.com"
+    url = "https://github.com/metatooth/libmultidraw"
+    description = "A multi-platform framework for domain-specific editors."
+    topics = ("framework", "design", "visualization", "2D", "3D")
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
@@ -21,7 +21,7 @@ class MultidrawConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "CMakeLists.txt", "src/*", "include/*"
+    exports_sources = "CMakeLists.txt", "libmultidraw/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
