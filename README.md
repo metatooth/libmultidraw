@@ -19,8 +19,8 @@ Original source from [vectaport/ivtools](https://github.com/vectaport/ivtools)
 ### Get and build
 
 ```
-$ git clone libmultidraw
-$ cd libmultidraw
+$ git clone https://github.com/metatooth/multidraw.git
+$ cd multidraw
 $ mkdir _build && cd _build
 $ conan install -s compiler=clang -s compiler.version=14 ..
 $ cmake ..
