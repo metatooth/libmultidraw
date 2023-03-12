@@ -5,6 +5,7 @@ add_custom_target(VersionHeader
 add_library(
 	multidraw
 	STATIC
+        libmultidraw.cpp
 	Catalog.cpp
 	Creator.cpp
         Editor.cpp
@@ -20,6 +21,23 @@ add_library(
 	state_vars/NameVar.cpp
 )
 
+target_link_libraries(multidraw ${CONAN_LIBS})
+
 add_dependencies(multidraw VersionHeader)
 
-target_include_directories(multidraw PUBLIC ${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(
+  multidraw
+  PUBLIC
+  ${CMAKE_SOURCE_DIR}
+  ${CMAKE_CURRENT_BINARY_DIR}
+  )
+
+set_target_properties(
+  multidraw
+  PROPERTIES
+  PUBLIC_HEADER
+  "libmultidraw/libmultidraw.hpp"
+)
+
+install(TARGETS multidraw)
+

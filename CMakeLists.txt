@@ -6,7 +6,10 @@ project(libmultidraw CXX)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-# first we can indicate the documentation build as an option and set it to ON by default
+include(CTest)
+
+# first we can indicate the documentation build as an option and set
+# it to ON by default
 option(BUILD_DOC "Build documentation" ON)
 
 # check if Doxygen is installed
@@ -20,7 +23,8 @@ if (DOXYGEN_FOUND)
     configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
     message("Doxygen build started")
 
-    # note the option ALL which allows to build the docs together with the application
+    # note the option ALL which allows to build the docs together with
+    # the application
     add_custom_target( docs
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
@@ -33,10 +37,4 @@ endif (DOXYGEN_FOUND)
 set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,readability-*)
 
 add_subdirectory(libmultidraw)
-
-
-#add_library(unidraw src/unidraw.cpp)
-#target_include_directories(unidraw PUBLIC include)
-
-#set_target_properties(unidraw PROPERTIES PUBLIC_HEADER "include/unidraw.h")
-#install(TARGETS unidraw)
+add_subdirectory(tests)
