@@ -13,7 +13,7 @@ using namespace multidraw;
 int main() {
   Multidraw* multidraw = Multidraw::instance();
   multidraw->catalog(
-    new ExampleCatalog("MultidrawExample", new ExampleCreator())
+    new ExampleCatalog("MultidrawSmokeTest", new ExampleCreator())
   );
                      
   ExampleEditor* editor = new ExampleEditor("./metatooth.stl");

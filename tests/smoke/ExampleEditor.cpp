@@ -9,7 +9,7 @@ const float HEIGHT = 600;
 ExampleEditor::ExampleEditor(const std::string& initial_file) :
   Editor(initial_file, "")
 {
-  Fl_Window* window = new Fl_Window(0, 0, WIDTH, HEIGHT, "MultidrawExample");
+  Fl_Window* window = new Fl_Window(0, 0, WIDTH, HEIGHT, "MultidrawSmokeTest");
 
   _viewer = new ExampleViewer(0, 0, WIDTH, HEIGHT, this);
 
