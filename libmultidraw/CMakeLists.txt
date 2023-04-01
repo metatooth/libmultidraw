@@ -36,7 +36,7 @@ set_target_properties(
   multidraw
   PROPERTIES
   PUBLIC_HEADER
-  "libmultidraw/libmultidraw.hpp"
+  "libmultidraw.hpp"
 )
 
 install(TARGETS multidraw)
